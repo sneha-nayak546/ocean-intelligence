@@ -1,0 +1,101 @@
+
+DEVOPS LAB – GIT COMMANDS (EXPERIMENT 1 TO 5)
+===========================================
+
+-------------------------------
+EXPERIMENT 1: Git Basics & Local Repository
+-------------------------------
+mkdir Git_Lab_Experiment1
+cd Git_Lab_Experiment1
+git init
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+git config --list
+echo "This is my first Git experiment" > README.txt
+git status
+git add README.txt
+git status
+git commit -m "Initial commit"
+echo "Git tracks file changes" >> README.txt
+git status
+git add README.txt
+git commit -m "Updated README file"
+git log
+
+-------------------------------
+EXPERIMENT 2: Git Branching
+-------------------------------
+git branch
+git branch feature-branch
+git checkout feature-branch
+git status
+git add .
+git commit -m "Added new feature in feature branch"
+git checkout main
+git add .
+git commit -m "Updated file in main branch"
+git merge feature-branch
+git add <filename>
+git commit
+git log --oneline
+git branch -d feature-branch
+
+-------------------------------
+EXPERIMENT 3: GitHub Repository Creation & Push
+-------------------------------
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+cd /c/Users/username/OneDrive/Desktop
+git clone https://github.com/username/git-lab-demo.git
+cd git-lab-demo
+git status
+notepad main.py
+git status
+git add main.py
+git status
+git commit -m "Added main.py file"
+git push -u origin main
+git pull origin main
+git log --oneline
+
+-------------------------------
+EXPERIMENT 4: GitHub Collaboration Using Pull Requests
+-------------------------------
+git clone https://github.com/username/Git_PullRequests.git
+cd Git_PullRequests
+git branch
+echo "This file is created in master branch" > file1.txt
+git status
+git add file1.txt
+git commit -m "Initial commit in master"
+git push origin main
+git branch feature-1
+git checkout feature-1
+echo "This change is from feature branch" >> file1.txt
+touch feature.txt
+echo "Feature branch file" > feature.txt
+git status
+git add .
+git commit -m "Changes done in feature-1"
+git push origin feature-1
+git checkout main
+git pull origin main
+git log --oneline
+
+-------------------------------
+EXPERIMENT 5: Git Tagging & Release Creation
+-------------------------------
+git checkout main
+git pull origin main
+git tag v1.0
+git tag
+git tag -a v1.1 -m "Version 1.1 release"
+git tag
+git show v1.0
+git push origin v1.0
+git push --tags
+git tag -d v1.0
+git push origin -d v1.0
+
+===========================================
+END OF COMMANDS
