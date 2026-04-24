@@ -54,6 +54,7 @@ git status
 git add main.py
 git status
 git commit -m "Added main.py file"
+git remote -v
 git push -u origin main
 git pull origin main
 git log --oneline
